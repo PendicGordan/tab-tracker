@@ -1,7 +1,8 @@
 <template>
     <v-layout >
       <v-flex xs6>
-        <songs-bookmarks />
+            <songs-bookmarks />
+            <recently-viewed-songs class="mt-2" />
       </v-flex>
       <v-flex xs6 >
         <songs-search-panel />
@@ -15,6 +16,7 @@
   import SongsSearchPanel from '@/components/Songs/SongsSearchPanel'
   import SongsService from '@/services/SongsService'
   import SongsBookmarks from '@/components/Songs/SongsBookmarks'
+  import RecentlyViewedSongs from '@/components/Songs/RecentlyViewedSongs'
 
   export default {
     data() {
@@ -27,9 +29,10 @@
       this.songs = (await SongsService.index()).data
     },
     components: {
-      SongsPanel,
-      SongsSearchPanel,
-      SongsBookmarks
+        SongsPanel,
+        SongsSearchPanel,
+        SongsBookmarks,
+        RecentlyViewedSongs
     },
     methods: {
       navigateTo(route) {
