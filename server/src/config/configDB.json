@@ -1,0 +1,29 @@
+{
+  "development": {
+	"username": "tabtracker",
+	"password": "1234567890",
+	"database": "tab_tracker",
+	"host": "db4free.net",
+	"dialect": "mysql",
+	"pool": {
+	  "max": 5,
+	  "min": 0,
+	  "idle": 20000,
+	  "acquire": 20000
+	}
+  },
+  "test": {
+	"username": "hackathon",
+	"password": "hackathon",
+	"database": "Smart_Hotel",
+	"host": "46.101.191.211",
+	"dialect": "mysql"
+  },
+  "production": {
+	"username": "hackathon",
+	"password": "hackathon",
+	"database": "Smart_Hotel",
+	"host": "46.101.191.211",
+	"dialect": "mysql"
+  }
+}
