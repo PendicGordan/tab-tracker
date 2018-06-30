@@ -43,9 +43,7 @@
         },
         async mounted() {
             if(this.isUserLoggedIn) {
-                this.songs = (await SongHistoryService.index({
-                    userId: this.user.id
-                })).data;
+                this.songs = (await SongHistoryService.index()).data;
             }
         },
         computed: {

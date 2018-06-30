@@ -28,6 +28,7 @@
   import SongHistoryService from '@/services/SongHistoryService';
   import {mapState} from 'vuex';
 
+
   export default {
     components: {Lyrics, Tabs, YoutubeVideo, SongMetadata},
     data() {
@@ -49,8 +50,7 @@
       //console.log(this.song)
         if(this.isUserLoggedIn) {
             SongHistoryService.post({
-                songId: songId,
-                userId: this.user.id
+                songId: songId
             });
         }
     }

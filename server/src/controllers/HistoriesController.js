@@ -7,7 +7,7 @@ exports.index = async (req, res) => {
 			//console.log(req.body.params.songId)
 
 			let where = {
-				UserId: req.query.userId
+				UserId: req.user.id
 			}
 
 			const histories = await History.findAll({
@@ -36,7 +36,7 @@ exports.index = async (req, res) => {
 exports.post = async (req, res) => {
 	try {
 		const histories = await History.create({
-			UserId: req.body.params.userId,
+			UserId: req.user.id,
 			SongId: req.body.params.songId
 		})
 		res.send(histories)

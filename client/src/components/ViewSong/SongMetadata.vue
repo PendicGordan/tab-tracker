@@ -72,21 +72,18 @@
       async bookmark1() {
         try {
           const temp = await BookmarksService.index({
-            songId: this.$store.state.route.params.songId,
-            userId: this.$store.state.user.id
+            songId: this.$store.state.route.params.songId
           })
 
           if(temp.data.length != 0) return;
 
           const temp2 = (await BookmarksService.post({
             songId: this.song.id,
-            userId: this.$store.state.user.id
           })).data
 
           this.bookmark = {
             bookmarkId: temp2.id,
             songId: temp2.SongId,
-            userId: temp2.UserId
           }
 
           console.log(this.bookmark)
